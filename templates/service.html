@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>{{name}} - Service Page</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style2.css') }}">
+
+</head>
+
+<body>
+
+
+<nav class="navbar">
+
+    <a href="/">Home</a>
+
+    <a href="/contact">Contact</a>
+
+    <a href="/service">Service</a>
+
+</nav>
+
+<section class="hero">
+    <a href="/contact" class="btn">Go to Contact Page</a>
+    <a href="/" class="btn">Back to Home Page</a>
+</section>
+<section class="services" id="services">
+
+    <h2>My Services</h2>
+
+    <p class="services-intro">
+        Here are some services I can provide.
+    </p>
+
+    <div class="service-container">
+
+        <h2>Python Services</h2>
+
+        <div class="service-card">
+
+            <h3>🐍 Python Automation</h3>
+
+            <p>
+                I can create Python automation scripts
+                to make repetitive tasks easier.
+            </p>
+
+            <h4>Starting at $10</h4>
+
+            <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>🌐 Web Development</h3>
+
+            <p>
+                I can create simple and professional
+                websites using Python, Flask, HTML and CSS.
+            </p>
+
+            <h4>Starting at $20</h4>
+
+            <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>📊 Python Presentations</h3>
+
+            <p>
+                I can create presentations and charts
+                using Python.
+            </p>
+
+            <h4>Starting at $15</h4>
+
+            <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+
+        </div>
+
+
+        <div class="service-card">
+
+            <h3>🔎 Web Scraping</h3>
+
+            <p>
+                I can create Python scripts to collect
+                publicly available website data.
+            </p>
+
+            <h4>Starting at $15</h4>
+
+            <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+
+        </div>
+
+        <h2>Photoshop Edits</h2>
+
+        <div class="service-card">
+            <h3> 📸 Group Photo</h3>
+
+            <p>
+                I can edit your group photo by photoshop.<br>
+                I edit your photo very professionally and 4k or 8k.
+            </p>
+
+            <h4>Starting at $20.</h4>
+             <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+        </div>
+
+        <div class="service-card">
+            <h3> 🛂 Passport Photo </h3>
+            <p>
+                I can edit your passport photo for any country, you want to travel.<br>
+                It will be 4k and white or blue background (background color can change by your comfortable once.)
+            </p>
+            <h4>Start With 5$.</h4>
+            <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+        </div>
+
+        <div class="service-card">
+            <h3>😎 Stylize Photo</h3>
+            <p>
+                I can transform your normal photo into stylize photo.<br>
+                It has 4k or 8k style. This service is better for cinema poster or other poster.
+            </p>
+
+            <h4>Start With 20$</h4>
+            <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+        </div>
+
+        <h2>Video Editing</h2>
+
+        <div class="service-card">
+            <h3> 🎥 Video Editing</h3>
+            <p>
+                I can edit your video like professional.<br>
+                It looks very excellent after the edit.
+            </p>
+            <h4>Starting at $20.5</h4>
+             <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+        </div>
+
+        <div class="service-card">
+            <h3>📽️ Cinematic Edit</h3>
+            <p>
+                I can make your cinematic edit. It looks really good.
+            </p>
+            <h4>Start With 30$</h4>
+            <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+        </div>
+
+        <h2>3D Model Creating</h2>
+
+        <div class="service-card">
+            <h3> Blender 3D</h3>
+            <p>
+                I can create any 3D model through Blender.<br>
+                After creating your 3D model it looks very smooth and clear.
+            </p>
+            <h4>Starting at $30</h4>
+             <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+        </div>
+    </div>
+
+</section>
+<footer>
+    <p>
+        © 2026 {{ name }} | Made with Python & Flask 🐍
+    </p>
+    <a href="/logout" class="btn">Logout</a>
+</footer>
+</body>
+</html>

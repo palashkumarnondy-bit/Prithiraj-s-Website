@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>PRITHIRAJ'S - Personal Website</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+
+</head>
+
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION BAR
+========================= -->
+
+<nav class="navbar">
+
+    <a href="/">Home</a>
+
+    <a href="/contact">Contact</a>
+
+    <a href="/service">Service</a>
+
+
+
+
+</nav>
+
+
+
+
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+
+<section class="hero">
+
+    <h1>Welcome to My Website! 🚀</h1>
+
+    <p>
+        Hello! I am {{ name }}.
+        I am learning Python Web Development.
+    </p>
+
+    <a href="/service" class="btn">
+        View My Services
+    </a>
+
+</section>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<div class="container">
+
+
+    <!-- About Card -->
+
+    <div class="card">
+
+        <h1>About My Website</h1>
+        <p>
+            This website gives you lots of services<br>
+            like: Photoshop Services, Python Scripts, Video Editing, Illustrator Works, etc.<br>
+            You can contact me by Social Media platforms like: instagram, massenger, twitor, imo.
+        </p>
+    </div>
+
+
+    <!-- Skills Card -->
+
+    <div class="card">
+
+        <h2>My Skills 🛠️</h2>
+
+        <p>
+            🐍 Python Programming
+        </p>
+
+        <p>
+            📸 Video Editing
+        </p>
+
+        <p>
+            📷 Photoshop Edits
+        </p>
+
+        <p>
+            Illustrator Edits
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>
+            Please Support Us 🙏
+        </h3>
+
+        <p>
+            You can support us by following our social media sights,<br>
+            like: Instagram and Youtube.
+        </p>
+
+
+    </div>
+
+
+</div>
+
+<a href="/profile" class="profile-logo">
+    <span>Profile</span>
+</a>
+
+<a href="about" class="profile-logo">
+    <span>About Us</span>
+</a>
+
+<a href="/greeting" class="profile-logo">
+    <span>Greeting</span>
+</a>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+    <p>
+        © 2026 {{ name }} | Made with Python & Flask 🐍
+    </p>
+
+    <a href="/logout" class="btn">Logout</a>
+
+
+
+</footer>
+
+
+</body>
+
+</html>

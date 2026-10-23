@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 30px 15px;
+            background: #101827;
+            color: #f8fafc;
+            font-family: Arial, sans-serif;
+        }
+
+        .profile-card {
+            width: 100%;
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 35px;
+            text-align: center;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 22px;
+            box-shadow: 0 15px 40px #0004;
+        }
+
+        .profile-heading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin: 0 0 26px;
+        }
+
+        .profile-heading h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 30px;
+        }
+
+        /* Profile logo shown beside the page heading */
+        .profile-logo {
+            width: 46px;
+            height: 46px;
+            flex: 0 0 46px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            color: #fff;
+            background: linear-gradient(135deg, #0ea5e9, #6366f1);
+            box-shadow: 0 5px 18px #0ea5e944;
+        }
+
+        .profile-logo svg {
+            width: 27px;
+            height: 27px;
+        }
+
+        .profile-photo,
+        .no-photo {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto;
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+            background: #334155;
+        }
+
+        .profile-photo {
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Professional profile icon used when no picture is uploaded */
+        .no-photo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #bae6fd;
+            overflow: hidden;
+        }
+
+        .no-photo svg {
+            width: 95px;
+            height: 95px;
+        }
+
+        .profile-name {
+            margin: 20px 0 8px;
+            font-size: 28px;
+            overflow-wrap: anywhere;
+        }
+
+        .profile-bio {
+            color: #cbd5e1;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
+
+        .profile-info {
+            margin: 25px 0;
+            padding: 15px;
+            text-align: left;
+            background: #0f172a;
+            border-radius: 12px;
+        }
+
+        .profile-info p {
+            color: #e2e8f0;
+            padding: 12px 5px;
+            margin: 0;
+            border-bottom: 1px solid #334155;
+            overflow-wrap: anywhere;
+        }
+
+        .profile-info p:last-child {
+            border-bottom: none;
+        }
+
+        .profile-info strong {
+            color: #38bdf8;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 6px;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 9px;
+            background: #0ea5e9;
+            color: white;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: #0369a1;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #334155;
+        }
+
+        .btn-secondary:hover {
+            background: #475569;
+        }
+
+        .message {
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background: #166534;
+            color: white;
+        }
+
+        .message.error {
+            background: #991b1b;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            .profile-card {
+                margin: 15px auto;
+                padding: 24px 15px;
+            }
+
+            .profile-heading h1 {
+                font-size: 25px;
+            }
+
+            .profile-photo,
+            .no-photo {
+                width: 135px;
+                height: 135px;
+            }
+
+            .no-photo svg {
+                width: 80px;
+                height: 80px;
+            }
+
+            .btn {
+                width: 100%;
+                margin: 6px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="profile-card">
+        <div class="profile-heading">
+            <span class="profile-logo" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M4.5 20C4.5 16.4 7.6 13.5 12 13.5C16.4 13.5 19.5 16.4 19.5 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <h1>My Profile</h1>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+
+        {% if user.image %}
+            <img
+                class="profile-photo"
+                src="{{ url_for('static', filename='uploads/' + user.image) }}"
+                alt="Profile Picture"
+            >
+        {% else %}
+            <div class="no-photo" role="img" aria-label="Default profile icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M4.5 20C4.5 16.4 7.6 13.5 12 13.5C16.4 13.5 19.5 16.4 19.5 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+        {% endif %}
+
+        <h2 class="profile-name">{{ user.name }}</h2>
+
+        <p class="profile-bio">
+            {{ user.bio or 'Welcome to my profile!' }}
+        </p>
+
+        <section class="profile-info" aria-label="Profile information">
+            <p><strong>Full Name:</strong> {{ user.name }}</p>
+            <p><strong>Age:</strong> {{ user.age or 'Not provided' }}</p>
+            <p><strong>Class:</strong> {{ user.student_class or 'Not provided' }}</p>
+            <p><strong>Location:</strong> {{ user.location or 'Not provided' }}</p>
+        </section>
+
+        <a href="{{ url_for('edit_profile') }}" class="btn">
+            <span aria-hidden="true">✏️</span> Edit Profile
+        </a>
+
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">
+            <span aria-hidden="true">⌂</span> Go to Home
+        </a>
+    </main>
+</body>
+</html>

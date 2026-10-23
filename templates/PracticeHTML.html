@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/projects">Projects</a>
+    <a href="/contact">Contact</a>
+    <a href="/price">Project Price</a>
+</nav>
+<section class="hero">
+    <a href="/" class="btn">Go to Home Page</a>
+    <a href="/contact" class="btn">Contact Me</a>
+</section>
+<section class="service" id="service">
+    <h2>My Services</h2>
+    <p class="service-intro">
+        My services page can help you many ways.
+    </p>
+    <div class="service-container">
+        <div class="service-card">
+            <h3>Python AutoMachine</h3>
+            <p>
+                I can create Python automation scripts<br>
+                to make repetitive tasks easier.
+            </p>
+            <h4>
+                Starting With 2$
+            </h4>
+            <a href="/contact" class="service-button">
+                Contact With Me
+            </a>
+        </div>
+
+        <div class="service-card">
+            <h4>Web Scarping</h4>
+            <p>
+                I can Scarp your web, <br>
+                to made your work easier.
+            </p>
+            <h5>Starting with 3$</h5>
+            <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+        </div>
+        <div class="service-card">
+            <h2>
+                Web Development
+            </h2>
+            <p>
+                It can develop your website.
+            </p>
+            <h3>Starting With 7$</h3>
+            <a href="/contact" class="service-button">
+                Contact Me
+            </a>
+        </div>
+    </div>
+</section></body>
+</html>

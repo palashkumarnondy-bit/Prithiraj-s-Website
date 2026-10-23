@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Page 👋</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+
+<nav class="navbar">
+
+    <a href="/">Home</a>
+
+    <a href="/contact">Contact</a>
+
+    <a href="/service">Service</a>
+    <a href="/students">Workers</a>
+</nav>
+
+<div class="greeting-box">
+    <h2>Greeting App 👋</h2>
+    <p class="greeting-description">
+        Enter your name and get a personalized greeting.
+    </p>
+    <form method="POST">
+        <input
+            type="text"
+            name="username"
+            class="greeting-input"
+            placeholder="Enter Your Name:"
+            required
+            >
+        <button type="submit" class="greeting-button">
+            Say Hello 👋
+        </button>
+    </form>
+
+    {% if username %}
+    <div class="greeting-result">
+        <h2>Hello, {{username}}!</h2>
+        <p>
+            Welcome To My Website 🚀
+        </p>
+        <p>
+            Your name in uppercase:<br>
+            <strong>{{ upper_name }}</strong>
+        </p>
+
+        <p>
+            Your name has:<br>
+            <strong>{{name_length}}</strong>
+            characters.
+        </p>
+
+        <p>
+            How can I help you 🤖 ?
+        </p>
+    </div>
+    {% endif %}
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project- {{name}}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+<nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/projects">Projects</a>
+
+    <a href="/contact">Contact</a>
+    <a href="/service">Service</a>
+    <a href="/search">Search</a>
+    <a href="/greeting">Greeting</a>
+    <a href="/students">Students</a>
+
+
+</nav>
+<section class="hero">
+    <a href="/" class="btn">Back to Home Page</a>
+</section>
+<div class="container">
+    <div class="card">
+        <h1>My Projects</h1>
+        <p>
+            Here you can get some projects. <br>
+            You can buy this projects form Projects Price Section.
+        </p>
+    </div>
+    <div class="card">
+        <h2>My Python Projects:</h2>
+        <p>
+            1. AutoMachine.<br>
+            2. Web Scarping.<br>
+            3. Web Development.<br>
+            4. Making Presentation.
+        </p>
+    </div>
+    <div class="card">
+        <h3>My other projects:</h3>
+        <p>
+            1. Photoshop<br>
+            2. Illustrator<br>
+            3. Video Editing<br>
+            4. Blender 3D Model
+        </p>
+    </div>
+</div>
+    <footer>
+        <p>
+            © 2026 {{name}} | Made with Python & HTML
+        </p>
+        <a href="/logout" class="btn">Logout</a>
+    </footer>
+
+
+</body>
+</html>

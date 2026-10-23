@@ -1,0 +1,335 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* =========================
+   AUTH CONTAINER
+========================= */
+
+.auth-container {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+/* =========================
+   AUTH BOX
+========================= */
+
+.auth-box {
+
+    width: 400px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.auth-box h1 {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    color: #222;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+
+    background: #ffe5e5;
+
+    color: #d60000;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   INPUT GROUP
+========================= */
+
+.input-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.input-group label {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group input {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+
+}
+
+
+/* =========================
+   INPUT FOCUS
+========================= */
+
+.input-group input:focus {
+
+    border-color: #667eea;
+
+    box-shadow:
+        0 0 0 3px rgba(102, 126, 234, 0.15);
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.auth-btn {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.auth-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(102, 126, 234, 0.35);
+
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+========================= */
+
+.forgot-password {
+
+    display: block;
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #667eea;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+}
+
+
+.forgot-password:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================
+   SWITCH TEXT
+========================= */
+
+.switch-text {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #777;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+.switch-text a {
+
+    color: #667eea;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.switch-text a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .auth-box {
+
+        width: 100%;
+
+        padding: 30px 25px;
+
+    }
+
+
+    .auth-box h1 {
+
+        font-size: 26px;
+
+    }
+
+}

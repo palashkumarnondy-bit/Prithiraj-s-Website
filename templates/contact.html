@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Contact With Me 📩</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+
+<!-- Navigation Bar -->
+
+<nav class="navbar">
+
+    <a href="/">Home</a>
+
+    <a href="/contact">Contact</a>
+
+    <a href="/service">Service</a>
+
+
+
+
+</nav>
+
+<!-- Contact Information -->
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Contact With Me 📩</h1>
+
+        <p>
+            Here you can get, How to contact with me.
+        </p>
+
+        <p>
+            You can contact with me by many ways.
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Contact With me by:</h2>
+
+        <ol>
+
+            <li>Social Media</li>
+
+            <li>E-mail: prithiraj@gmail.com</li>
+
+            <li>Phone Number: +8801601447456</li>
+
+        </ol>
+
+        <p>
+            The best way to contact with me is
+            e-mail or social media.
+        </p>
+
+    </div>
+
+
+    <!-- Contact Form -->
+
+    <div class="contact-form">
+
+        <h2>Send Me a Message 📩</h2>
+
+        <p class="form-description">
+            Fill out the form below and send me a message.
+        </p>
+
+
+        {% if success %}
+
+            <p class="success-message">
+                {{ success }}
+            </p>
+
+        {% endif %}
+
+
+        <form method="POST">
+
+
+            <!-- Name -->
+
+            <div class="form-group">
+
+                <label>Name</label>
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="form-group">
+
+                <label>E-mail</label>
+
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Message -->
+
+            <div class="form-group">
+
+                <label>Message</label>
+
+                <textarea
+                    name="message"
+                    placeholder="Write your message"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- Submit -->
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="flash-message flash-{{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            <button type="submit" class="btn">
+                Submit Your Massage
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- Footer -->
+
+<footer>
+
+    <p>
+        © 2026 {{ name }} | Made with Python & HTML
+    </p>
+
+    <a href="/logout" class="btn">
+        Logout
+    </a>
+
+</footer>
+
+
+</body>
+
+</html>
